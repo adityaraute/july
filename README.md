@@ -11,12 +11,12 @@ A small library for creating pretty heatmaps of daily data.
 
 
 ### Install
-```
+```bash
 $ pip install july
 ```
 
 ### Usage
-```
+```py
 import numpy as np
 import matplotlib.pyplot as plt
 import july
@@ -25,17 +25,17 @@ from july.utils import date_range
 dates = date_range("2020-01-01", "2020-12-31")
 data = np.random.randint(0, 14, len(dates))
 ```
-```
+```py
 # GitHub Activity like plot (for someone with consistently random work patterns).
 july.heatmap(dates, data, title='Github Activity', cmap="github")
 ```
 ![GitHub heatmap](https://github.com/e-hulten/july/blob/master/examples/heatmap_github.jpg?raw=true)
-```
+```py
 # Here, 'osl_df' is a pandas df. 
 july.heatmap(osl_df.date, osl_df.temp, cmap="golden", colorbar=True, title="Average temperatures: Oslo , Norway")
 ```
 ![Golden heatmap](https://github.com/e-hulten/july/blob/master/examples/pandas_oslo_temperature_plot.jpg?raw=true)
-```
+```py
 # More exhaustive example using useless, but pretty colours.
 july.heatmap(dates=dates, 
              data=data, 
@@ -56,14 +56,14 @@ july.heatmap(dates=dates,
 ```
 ![Pastel heatmap](https://github.com/e-hulten/july/blob/master/examples/heatmap_pastel.jpg?raw=true)
 
-```
+```py
 # Month plot with dates.
 july.month_plot(dates, data, month=5, date_label=True, ax=axes[0])
 # Month plot with values.
 july.month_plot(dates, data, month=5, value_label=True, ax=axes[1])
 ```
 ![Month plot](https://github.com/e-hulten/july/blob/master/examples/month_plot.jpg?raw=true)
-```
+```py
 # Calendar plot. 
 july.calendar_plot(dates, data)
 ```
